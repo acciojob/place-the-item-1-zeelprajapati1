@@ -1,16 +1,74 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .holder {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+        }
+        
+        .item {
+            background-color: #011e29;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 5px;
+            flex: 1 1 calc(33.333% - 20px);
+            min-width: 100px;
+            box-sizing: border-box;
+        }
+        
+        /* For the specific layout shown in the first image */
+        .holder.specific-layout .item:nth-child(1) { order: 3; }
+        .holder.specific-layout .item:nth-child(2) { order: 1; }
+        .holder.specific-layout .item:nth-child(3) { order: 2; }
+        
+        /* For the flex-wrap illustration */
+        .holder.wrap-example {
+            justify-content: space-around;
+        }
+        .holder.wrap-example .item:nth-child(1) { order: 6; }
+        .holder.wrap-example .item:nth-child(2) { order: 7; }
+        .holder.wrap-example .item:nth-child(3) { order: 1; }
+        .holder.wrap-example .item:nth-child(4) { order: 2; }
+        .holder.wrap-example .item:nth-child(5) { order: 3; }
+        .holder.wrap-example .item:nth-child(6) { order: 4; }
+        .holder.wrap-example .item:nth-child(7) { order: 5; }
+    </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
-
+    <h2>Specific Layout (3 1 2)</h2>
+    <div class="holder specific-layout">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    
+    <h2>Flex-wrap Illustration (3 4 5 6 7 1 2)</h2>
+    <div class="holder wrap-example">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+    </div>
 </body>
-
 </html>
