@@ -1,2 +1,12 @@
 
-/* Your CSS Code here. */
+/* Your CSS Code here. */.holder {
+    display: flex;
+    justify-content: space-between; /* Ensures spacing with first and last items touching screen edges */
+    flex-wrap: wrap; /* Moves items to the next row if needed */
+    width: 100vw; /* Full viewport width */
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+}
